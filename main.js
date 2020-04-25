@@ -1,10 +1,9 @@
 let cells
 // true = 〇
 let turnFlag
+//WARNING: 偶数にすること！！
 const cell_CR = 4
 const main = () => {
-  //WARNING: 偶数にすること！！
-
   cells = init(cell_CR)
   renderingBoard(cells)
   setInterval(()=>{
@@ -98,27 +97,22 @@ const putPiece = e => {
   }
   turnFlag = !turnFlag
   renderingBoard(cells)
-  // TODO: ゲームの終了判定を呼び出す。
+
   gameEnd()
 }
 
 const gameEnd = () =>{
-  const arr = cells.flat()
-  const endFlag = arr.some(e=>{
-    if(e==''){
-      return true
-    }
-  })
-  if(!endFlag){
+  // 全てのcellが埋まってる場合ゲーム終了
+  if(!(cells.flat().some(e=>{if(e==''){return true}}))){
     console.log('ゲーム終了');
-    let count = arr.filter(e => {return e == '〇'}).length
+    const count = cells.flat().filter(e => {return e == '〇'}).length
     if (count > cell_CR*cell_CR/2) {
-      console.log(`〇が${count}個で〇の勝ち`);
+      alert(`〇が${count}個で〇の勝ち`);
     }else if(count == cell_CR*cell_CR/2){
-      console.log(`引き分け`);
+      alert(`引き分け`);
     }else{
-      const batu = cell_CR*cell_CR/2 - count;
-      console.log(`×が${batu}個で×の勝ち`);
+      const a = cell_CR*cell_CR - count;
+      alert(`×が${a}個で×の勝ち`);
     }
   }
 }
