@@ -118,87 +118,73 @@ const gameEnd = () =>{
 }
 
 const turnUp = (turnFlag, x, y, targetCells) => {
-  while(true){
-    if(cells[--x] == undefined){
-      return false
-    }
-    if(cells[x][y] == undefined){
-      return false
-    }
-    return hantei(turnFlag, x, y, targetCells, turnUp);
+  if(cells[--x] == undefined){
+    return false
   }
+  if(cells[x][y] == undefined){
+    return false
+  }
+  return hantei(turnFlag, x, y, targetCells, turnUp);
 }
 
 const turnUpLeft = (turnFlag, x, y, targetCells) => {
-  while(true){
-    if(cells[--x] == undefined){
-      return false
-    }
-    if(cells[x][--y] == undefined){
-      return false
-    }
-    return hantei(turnFlag, x, y, targetCells, turnUpLeft);
+  if(cells[--x] == undefined){
+    return false
   }
+  if(cells[x][--y] == undefined){
+    return false
+  }
+  return hantei(turnFlag, x, y, targetCells, turnUpLeft);
 }
 
 const turnUpRight = (turnFlag, x, y, targetCells) => {
-  while(true){
-    if(cells[--x] == undefined){
-      return false
-    }
-    if(cells[x][++y] == undefined){
-      return false
-    }
-    return hantei(turnFlag, x, y, targetCells, turnUpRight);
+  if(cells[--x] == undefined){
+    return false
   }
+  if(cells[x][++y] == undefined){
+    return false
+  }
+  return hantei(turnFlag, x, y, targetCells, turnUpRight);
 }
 
 const turnDown = (turnFlag, x, y, targetCells) => {
-  while(true){
-    if(cells[++x] == undefined){
-      return false
-    }
-    if(cells[x][y] == undefined){
-      return false
-    }
-    return hantei(turnFlag, x, y, targetCells, turnDown);
+  if(cells[++x] == undefined){
+    return false
   }
+  if(cells[x][y] == undefined){
+    return false
+  }
+  return hantei(turnFlag, x, y, targetCells, turnDown);
 }
 
 const turnDownLeft = (turnFlag, x, y, targetCells) => {
-  while(true){
-    if(cells[++x] == undefined){
-      return false
-    }
-    if(cells[x][--y] == undefined){
-      return false
-    }
-    return hantei(turnFlag, x, y, targetCells, turnDownLeft);
+  if(cells[++x] == undefined){
+    return false
   }
+  if(cells[x][--y] == undefined){
+    return false
+  }
+  return hantei(turnFlag, x, y, targetCells, turnDownLeft);
 }
 
 const turnDownRight = (turnFlag, x, y, targetCells) => {
-  while(true){
-    if(cells[++x] == undefined){
-      return false
-    }
-    if(cells[x][++y] == undefined){
-      return false
-    }
-    return hantei(turnFlag, x, y, targetCells, turnDownRight);
+  if(cells[++x] == undefined){
+    return false
   }
+  if(cells[x][++y] == undefined){
+    return false
+  }
+  return hantei(turnFlag, x, y, targetCells, turnDownRight);
 }
 
 const turnLeft = (turnFlag, x, y, targetCells) => {
-  while(true){
-    if(cells[x] == undefined){
-      return false
-    }
-    if(cells[x][--y] == undefined){
-      return false
-    }
-    return hantei(turnFlag, x, y, targetCells, turnLeft);
+  if(cells[x] == undefined){
+    return false
   }
+  if(cells[x][--y] == undefined){
+    return false
+  }
+  return hantei(turnFlag, x, y, targetCells, turnLeft);
 }
 
 const turnRight = (turnFlag, x, y, targetCells) => {
